@@ -1,13 +1,13 @@
 package com.example.calculatorkotlin
 
 import android.annotation.SuppressLint
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
-import kotlin.math.pow
-import kotlin.math.sqrt
+import kotlin.math.*
 
 
 class MainActivity : FragmentActivity() {
@@ -77,6 +77,15 @@ class MainActivity : FragmentActivity() {
         val buttonEquals: Button = findViewById(R.id.res_button)
         val buttonDot: Button = findViewById(R.id.dot_button)
         val buttonPercent: Button = findViewById(R.id.percent_button)
+        val buttonFactorial: Button? = findViewById(R.id.factorial_button)
+        val buttonPower: Button? = findViewById(R.id.power_button)
+        val buttonRoot: Button? = findViewById(R.id.root_button)
+        val buttonSin: Button? = findViewById(R.id.sin_button)
+        val buttonCos: Button? = findViewById(R.id.cos_button)
+        val buttonTan: Button? = findViewById(R.id.tan_button)
+        val buttonLn: Button? = findViewById(R.id.ln_button)
+        val buttonLog: Button? = findViewById(R.id.log_button)
+        val buttonPi: Button? = findViewById(R.id.pi)
         text = findViewById(R.id.text_view)
         buttonClr.setOnClickListener {
             text?.text = ""
@@ -433,5 +442,173 @@ class MainActivity : FragmentActivity() {
                 isOperationClicked = false
             }
         })
+        if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            buttonSin!!.setOnClickListener(View.OnClickListener {
+                if (isOperationClicked) {
+                    return@OnClickListener
+                }
+                if (text?.text !== "") {
+                    try {
+                        valueOne = text?.text.toString().toDouble()
+                        res = sin(Math.toRadians(valueOne))
+                        process = res.toString()
+                        text?.text = process
+                    } catch (nfe: java.lang.NumberFormatException) {
+                        text?.text = "error"
+                    }
+                    isResultCalculated = true
+                }
+                isCleared = false
+            })
+            buttonCos!!.setOnClickListener(View.OnClickListener {
+                if (isOperationClicked) {
+                    return@OnClickListener
+                }
+                if (text?.text !== "") {
+                    try {
+                        valueOne = text?.text.toString().toDouble()
+                        res = cos(Math.toRadians(valueOne))
+                        process = res.toString()
+                        text?.text = process
+                    } catch (nfe: java.lang.NumberFormatException) {
+                        text?.text = "error"
+                    }
+                    isResultCalculated = true
+                }
+                isCleared = false
+            })
+            buttonTan!!.setOnClickListener(View.OnClickListener {
+                if (isOperationClicked) {
+                    return@OnClickListener
+                }
+                if (text?.text !== "") {
+                    try {
+                        valueOne = text?.text.toString().toDouble()
+                        res = tan(Math.toRadians(valueOne))
+                        process = res.toString()
+                        text?.text = process
+                    } catch (nfe: java.lang.NumberFormatException) {
+                        text?.text = "error"
+                    }
+                    isResultCalculated = true
+                }
+                isCleared = false
+            })
+            buttonFactorial!!.setOnClickListener(View.OnClickListener {
+                if (isOperationClicked) {
+                    return@OnClickListener
+                }
+                if (text?.text !== "") {
+                    res = 1.0
+                    try {
+                        valueOne = text?.text.toString().toDouble()
+                        if (valueOne < 0 || valueOne > 60) {
+                            text?.text = "error"
+                        } else if (valueOne == 0.0) {
+                                res = 1.0
+                        } else {
+                            for (i in 1..valueOne.toInt()) {
+                                    res *= i
+                            }
+                        }
+                        process = res.toString()
+                        text?.text = process
+                    } catch (nfe: java.lang.NumberFormatException) {
+                        text?.text = "error"
+                    }
+                    isResultCalculated = true
+                }
+                isCleared = false
+            })
+            buttonLn!!.setOnClickListener(View.OnClickListener {
+                if (isOperationClicked) {
+                    return@OnClickListener
+                }
+                if (text?.text !== "") {
+                    try {
+                        res = ln(valueOne)
+                        process = res.toString()
+                        text?.text = process
+                    } catch (nfe: java.lang.NumberFormatException) {
+                        text?.text = "error"
+                    }
+                    isResultCalculated = true
+                }
+                isCleared = false
+            })
+            buttonLog!!.setOnClickListener(View.OnClickListener {
+                if (isOperationClicked) {
+                    return@OnClickListener
+                }
+                if (text?.text !== "") {
+                    try {
+                        res = ln(valueOne)
+                        process = res.toString()
+                        text?.text = process
+                    } catch (nfe: java.lang.NumberFormatException) {
+                        text?.text = "error"
+                    }
+                    isResultCalculated = true
+                }
+                isCleared = false
+            })
+            buttonPi!!.setOnClickListener {
+                when {
+                    text?.text.toString() == "0" -> {
+                        text?.text = Math.PI.toString()
+                    }
+                    isResultCalculated -> {
+                        buttonClr.performClick()
+                        text?.append(Math.PI.toString())
+                        isResultCalculated = false
+                    }
+                    else -> text?.append(Math.PI.toString())
+                }
+                isOperationClicked = false
+                isCleared = false
+            }
+            buttonPower!!.setOnClickListener(View.OnClickListener {
+                if (text?.text == "") {
+                    return@OnClickListener
+                }
+                if (!isOperationClicked) {
+                    operation = 'p'
+                    try {
+                        isOperationClicked = true
+                        valueOne = text?.text.toString().toDouble()
+                        text?.text = ""
+                    } catch (nfe: java.lang.NumberFormatException) {
+                        text?.text = "error"
+                    }
+                } else {
+                    operation = 'p'
+                }
+                if (isOperationClicked) {
+                    return@OnClickListener
+                }
+                isCleared = false
+            })
+            buttonRoot!!.setOnClickListener(View.OnClickListener {
+                if (text?.text == "") {
+                    return@OnClickListener
+                }
+                if (!isOperationClicked) {
+                    operation = 'r'
+                    try {
+                        isOperationClicked = true
+                        valueOne = text?.text.toString().toDouble()
+                        text?.text = ""
+                    } catch (nfe: java.lang.NumberFormatException) {
+                        text?.text = "error"
+                    }
+                } else {
+                    operation = 'r'
+                }
+                if (isOperationClicked) {
+                    return@OnClickListener
+                }
+                isCleared = false
+            })
+        }
     }
 }
