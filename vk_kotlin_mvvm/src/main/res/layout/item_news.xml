@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:paddingBottom="4dp"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon1"
+        tools:srcCompat="@drawable/icon1"
+        android:layout_marginLeft="12dp" />
+
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        android:textSize="18sp"
+        android:textColor="#3b6fa1"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="8dp" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        android:fontFamily="sans-serif"
+        android:textSize="14sp"
+        android:textColor="#8c8d8f"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/author"
+        android:layout_marginLeft="8dp" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_more_vert_black_24dp"
+        android:layout_marginBottom="-25dp"
+        android:layout_marginLeft="290dp"
+        app:layout_constraintLeft_toRightOf="@id/imageView"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/date"/>
+
+    <TextView
+        android:id="@+id/contentText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="casual"
+        android:textSize="14sp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:maxLines="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:text="8 КНИГ, ЭКРАНИЗАЦИИ КОТОРЫХ ПОЛУЧИЛИ ОСКАР
+#favoritefromstudyhard
+🎬1939 год. «Унесенные ветром»
+«Унесенные ветром» по роману Маргарет Митчелл получил 8 премий Оскар, в том числе 2 почетных. Беспрецедентный случай! Награда досталась всем: и блистательной Вивьен Ли, сыгравшей Скарлетт, и Хэтти МакДэниел, исполнившей роль Мамушки (между прочим, она стала первой афроамериканкой, получившей Оскар. Год, не забываем, 39-й!), не говоря уже о режиссере, сценаристе и продюсерах. Без Оскара остался, разве что, секс-символ 30−40-х годов Кларк Гейбл, игравший Ретта Батлера. Впрочем, у него уже была награда Академии, полученная в 1934 году за роль в фильме «Это случилось однажды ночью».
+🎬1957 год. «Вокруг света за 80 дней»
+В 1956 году режиссёр Майкл Андерсон снял экранизацию одного из самых известных приключенческих романов — книги Жюля Верна «Вокруг света за 80 дней». Филеаса Фогга в картине сыграл английский актёр Дэвид Нивен, специализировавшийся на ролях британских аристократов и как нельзя лучше подошедший на эту роль. Фильм завоевал пять премий Оскар, а сама книга в отдельном представлении не нуждается.
+🎬1972 год. «Крестный отец»
+Оригинальный роман Марио Пьюзо был опубликован в 1969 году. В 1972 ему посчастливилось из увлекательной, но всё-таки не выдающейся книги превратиться в гениальный фильм. Впрочем, не стоит отодвигать самого Пьюзо на второй план. Именно он переосмыслил свой роман и написал сценарий для фильма, вместе с режиссером Фрэнсисом Фордом Копполой.
+"
+        android:layout_marginRight="16dp" />
+
+    <TextView
+        android:id="@+id/seeMore"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Expand text..."
+        android:layout_marginBottom="6dp"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="14sp"
+        android:textColor="#3b6fa1"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/contentText"
+        app:layout_constraintTop_toBottomOf="@+id/contentText"/>
+
+    <TextView
+        android:id="@+id/like"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="18dp"
+        android:text="TextView"
+        android:fontFamily="sans-serif"
+        android:textSize="14sp"
+        android:textColor="#a6a9b0"
+        app:layout_constraintStart_toEndOf="@id/like_button"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="18dp" />
+
+    <ImageView
+        android:id="@+id/like_button"
+        android:layout_width="18dp"
+        android:layout_height="16dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/like"
+        app:layout_constraintTop_toTopOf="@+id/like"
+        app:srcCompat="@drawable/heart"
+        tools:srcCompat="@drawable/heart"
+        android:scaleType="centerInside"/>
+
+
+    <TextView
+        android:id="@+id/comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="6dp"
+        android:fontFamily="sans-serif"
+        android:text="TextView"
+        android:textColor="#8c8d8f"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/comment_button"
+        app:layout_constraintStart_toEndOf="@+id/comment_button"
+        app:layout_constraintTop_toTopOf="@+id/comment_button"
+        android:layout_marginRight="24dp"
+        android:layout_marginLeft="6dp" />
+
+
+    <ImageView
+        android:id="@+id/comment_button"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/like"
+        app:layout_constraintStart_toEndOf="@+id/like"
+        app:layout_constraintTop_toTopOf="@+id/like"
+        app:srcCompat="@drawable/comment"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="14dp" />
+
+    <TextView
+        android:id="@+id/share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="sans-serif"
+        android:text="TextView"
+        android:textColor="#8C8D8F"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/share_button"
+        app:layout_constraintStart_toEndOf="@+id/share_button"
+        app:layout_constraintTop_toTopOf="@+id/share_button"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="24dp" />
+
+    <ImageView
+        android:id="@+id/share_button"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="34dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/comment"
+        app:layout_constraintStart_toEndOf="@+id/comment"
+        app:layout_constraintTop_toTopOf="@+id/comment"
+        app:srcCompat="@drawable/share"
+        android:layout_marginRight="4dp"
+        android:layout_marginLeft="34dp" />
+
+    <ImageView
+        android:id="@+id/view_button"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="160dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/share"
+        app:layout_constraintStart_toEndOf="@id/share"
+        app:layout_constraintTop_toTopOf="@+id/share"
+        app:layout_constraintEnd_toStartOf="@id/view_text"
+        app:srcCompat="@drawable/eye"
+        android:layout_marginLeft="160dp" />
+
+    <TextView
+        android:id="@+id/view_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:fontFamily="sans-serif"
+        android:text="TextView"
+        android:textColor="#8C8D8F"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/view_button"
+        app:layout_constraintTop_toBottomOf="@id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seeMore"
+        app:srcCompat="@drawable/picture"
+        tools:srcCompat="@drawable/picture" />
+
+    <View
+        android:id="@+id/whiteview1"
+        android:layout_width="427dp"
+        android:layout_height="0.6dp"
+        android:layout_marginTop="42dp"
+        android:background="#ffffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <View
+        android:id="@+id/greyview"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="#E0E0ED"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/whiteview1" />
+
+    <View
+        android:id="@+id/whiteview2"
+        android:layout_width="427dp"
+        android:layout_height="0.6dp"
+        android:layout_marginTop="48dp"
+        android:background="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
